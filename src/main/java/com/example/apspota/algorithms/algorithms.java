@@ -6,7 +6,7 @@ public class algorithms {
     public static int countToQuickSort = 0, countToHeapSort = 0, countToMergeSort = 0;
 
 
-    public static void bubbleSort(int[] vector) {
+    public static int bubbleSort(int[] vector) {
 //        System.out.println("vetor: " + vector);
         boolean verifyNextItem;
         int currentValue, totalComparisons = 0;
@@ -25,7 +25,8 @@ public class algorithms {
             }
             if (verifyNextItem) break;
         }
-        System.out.println("Comparações realizadas usando o Bubble Sort: " + totalComparisons);
+//        System.out.println("Comparações realizadas usando o Bubble Sort: " + totalComparisons);
+        return totalComparisons;
     } // OK
 
 
@@ -37,6 +38,7 @@ public class algorithms {
             quickSort(vector, initialIndex, (keyPosition - 1));
             quickSort(vector, (keyPosition + 1), lastIndex);
         }
+
     } // OK
 
     public static int getKeyPositionInVector(int[] vector, int initial, int last) {
@@ -69,7 +71,6 @@ public class algorithms {
 
         vector[initial] = vector[lastValue];
         vector[lastValue] = key;
-
         return lastValue;
     } // OK
 
@@ -111,7 +112,7 @@ public class algorithms {
     } // OK
 
 
-    public static void selectionSort(int[] vetor) {
+    public static int selectionSort(int[] vetor) {
         int count = 0;
 
         for (int index = 0; index < vetor.length; index++) {
@@ -124,7 +125,8 @@ public class algorithms {
             }
             swap(vetor, index, minValue);
         }
-        System.out.println("Comparações realizadas usando o Selection Sort: " + count);
+        return count;
+//        System.out.println("Comparações realizadas usando o Selection Sort: " + count);
 
     } // OK
 
@@ -165,7 +167,7 @@ public class algorithms {
     }
 
 
-    public static void insertionSort(int[] vector) {
+    public static int insertionSort(int[] vector) {
         int countTotalTrades = 0;
         int tempAmzValueVector = 0;
         int index = 0;
@@ -184,7 +186,8 @@ public class algorithms {
             //System.out.println("Tamanho index: " + index);
             vector[index + 1] = tempAmzValueVector;
         }
-        System.out.println("Comparações realizadas usando o Insertion Sort: " + countTotalTrades);
+        return countTotalTrades;
+//        System.out.println("Comparações realizadas usando o Insertion Sort: " + countTotalTrades);
     } // OK
 
     //swap utilizado pelo professor para troca, usar este como o default.

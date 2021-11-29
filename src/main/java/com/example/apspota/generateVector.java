@@ -3,9 +3,9 @@ package com.example.apspota;
 
 public class generateVector {
 
-    public static int[] generate(int lengthArray) {
+    public static int[] generate(int lengthVector) {
         int randomNumber;
-        int[] array = new int[lengthArray];
+        int[] array = new int[lengthVector];
 
         for (int index = 0; index < array.length; index++) {
             randomNumber = generateRandomNumbers();
